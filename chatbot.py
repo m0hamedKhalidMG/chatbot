@@ -2,7 +2,7 @@ import random
 import json
 import torch
 from model import NeuralNetwork
-from preprocessing import create_bag_of_words, tokenize
+from preprocessing import create_bag_of_words, tokenize , compare_methods
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -25,6 +25,7 @@ model.eval()
 
 def chat_bot(input_text):
     tokenized_input = tokenize(input_text)
+    compare_methods(input_text,tokenized_input)
     bag_of_words_input = create_bag_of_words(tokenized_input, all_words)
     bag_of_words_input = bag_of_words_input.reshape(1, bag_of_words_input.shape[0])
     bag_of_words_input = torch.from_numpy(bag_of_words_input).to(device)
