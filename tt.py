@@ -5,7 +5,44 @@ from nltk.corpus import stopwords
 from nltk import pos_tag, ne_chunk
 import spacy
 from spacy.matcher import Matcher
+'''
 
+CC	coordinating conjunction
+CD	cardinal digit
+DT	determiner
+EX	existential there
+FW	foreign word
+IN	preposition/subordinating conjunction
+JJ	This NLTK POS Tag is an adjective (large)
+JJR	adjective, comparative (larger)
+JJS	adjective, superlative (largest)
+LS	list market
+MD	modal (could, will)
+NN	noun, singular (cat, tree)
+NNS	noun plural (desks)
+NNP	proper noun, singular (sarah)
+NNPS	proper noun, plural (indians or americans)
+PDT	predeterminer (all, both, half)
+POS	possessive ending (parent\ ‘s)
+PRP	personal pronoun (hers, herself, him, himself)
+PRP$	possessive pronoun (her, his, mine, my, our )
+RB	adverb (occasionally, swiftly)
+RBR	adverb, comparative (greater)
+RBS	adverb, superlative (biggest)
+RP	particle (about)
+TO	infinite marker (to)
+UH	interjection (goodbye)
+VB	verb (ask)
+VBG	verb gerund (judging)
+VBD	verb past tense (pleaded)
+VBN	verb past participle (reunified)
+VBP	verb, present tense not 3rd person singular(wrap)
+VBZ	verb, present tense with 3rd person singular (bases)
+WDT	wh-determiner (that, what)
+WP	wh- pronoun (who)
+WRB	wh- adverb (how)
+
+'''
 # nltk.download('punkt')
 # nltk.download('stopwords')
 # nltk.download('wordnet')
@@ -115,7 +152,18 @@ def print_dependency_by_sentence(text):
 print_dependency_by_sentence(text)
 
 # 11. Rule-Based Matching
+'''
 
+amod (adjectival modifier): "Natural" modifies "language".
+compound: "language" is part of the compound noun with "processing".
+nsubj (nominal subject): "processing" is the subject of the verb "is".
+ROOT: The main verb of the sentence.
+det (determiner): "a" is a determiner for "subfield".
+attr (attribute): "subfield" is an attribute of the subject.
+prep (prepositional modifier): "of" introduces a prepositional phrase modifying "subfield".
+pobj (prepositional object): "linguistics" is the object of the preposition "of".
+punct (punctuation): The period at the end of the sentence.
+'''
 
 tokens = clean_and_tokenize(text)
 tokens_without_stopwords = remove_stopwords(tokens)
